@@ -28,7 +28,7 @@ public class SpssVariable {
 
   static final int RECORD_TYPE = 2;
 
-  private static final Charset ASCII = Charset.forName("ASCII");
+  static final Charset ASCII = Charset.forName("ASCII");
 
 
   private int typeCode;

@@ -45,7 +45,7 @@ class LongVariableNamesRecord {
         // shouldn't make a difference in terms of lookup, but if
         // the handling of encoding is changed in Variable() than
         // it needs to be changed here as well...
-        shortName = new String(longNames, tokenStart, i - tokenStart);
+        shortName = new String(longNames, tokenStart, i - tokenStart, SpssVariable.ASCII);
         tokenStart = i + 1;
       } else if (i == longNamesLength || longNames[i] == '\t') {
         longName = new byte[i - tokenStart];
