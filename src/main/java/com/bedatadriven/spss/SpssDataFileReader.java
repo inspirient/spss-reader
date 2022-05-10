@@ -146,6 +146,7 @@ public class SpssDataFileReader {
           switch (header.getSubType()) {
             case VersionHeader.EXTENDED_RECORD_TYPE:
               versionInfo = new VersionHeader(inputStream);
+              inputStream.setEncoding( versionInfo.getCharacterName() );
               break;
 
             case MissingValuesHeader.EXTENDED_RECORD_TYPE:  // Missing values codes?
