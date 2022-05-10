@@ -19,6 +19,11 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient4 - 2022-05-10
+
+- Explicitly use same encoding when retrieving short variable names (fixes NullPointerException)
+- Fix of-by-one indexing issue when retrieving the weight variable index (fixes ArrayIndexOutOfBoundsException when weight variable is last variable in SPSS file)
+
 ### 1.4inspirient3 - 2022-05-10
 
 - Merge fixes and clean-ups. First production release.
