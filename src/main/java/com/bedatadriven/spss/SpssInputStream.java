@@ -22,7 +22,7 @@ import java.nio.charset.Charset;
 public class SpssInputStream {
   private DataInputStream file;
   private boolean needToFlipBytes;
-  private final Charset charset;
+  private Charset charset;
 
   public SpssInputStream(InputStream is, Charset charset) {
     this.file = new DataInputStream(is);
