@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient3 - 2022-05-10
+
+- Merge fixes and clean-ups. First production release.
+
 ### 1.4inspirient2 - 2022-05-10
 
 - Merge commit [f01dc1e](https://github.com/Elmervc/spss-reader/commit/f01dc1ec34f4f16d26e0eed4ebaa5a2ee3048843) from [@Elmervc](https://github.com/Elmervc): Use encoding from version info
