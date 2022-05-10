@@ -64,7 +64,7 @@ class FileHeader {
   }
 
   public int getWeightVariableRecordIndex() {
-    return weightVariablePosition;
+    return weightVariablePosition - 1;
   }
   
   public boolean isCompressed() {
