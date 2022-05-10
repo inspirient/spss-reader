@@ -26,8 +26,8 @@ Java library to read SPSS files.
 
 ### 1.4inspirient1 - 2022-05-10
 
-- Fork based 1.4-SNAPSHOT (commit [c675df9](https://github.com/bedatadriven/spss-reader/commit/c675df9a93b2bc02013cac02607fcf76804e5ea3)) [@bedatadriven](https://github.com/bedatadriven/spss-reader).
-- Remove setup instructions that are not applicable to this to avoid confusion.
+- Fork based on 1.4-SNAPSHOT (commit [c675df9](https://github.com/bedatadriven/spss-reader/commit/c675df9a93b2bc02013cac02607fcf76804e5ea3)) [@bedatadriven](https://github.com/bedatadriven/spss-reader).
+- Remove setup instructions that are not applicable to this fork to avoid confusion.
 
 ### 1.3 - 2020-02-04
 
