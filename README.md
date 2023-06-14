@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient5 - 2023-06-14
+
+- Ensure a valid storage flag is available at all times (fixes StringIndexOutOfBoundsException)
+
 ### 1.4inspirient4 - 2022-05-10
 
 - Explicitly use same encoding when retrieving short variable names (fixes NullPointerException)
