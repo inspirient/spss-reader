@@ -69,13 +69,17 @@ class CompressedCaseReader extends CaseReader {
   }
 
   private int readNextStorageFlag() throws IOException {
-    if (flagIndex >= END_OF_BLOCK) {
-      for (int i = 0; i != 8; ++i) {
-        flags[i] = inputStream.readUnsignedByte();
+    while (true) {
+      if (flagIndex >= END_OF_BLOCK) {
+        for (int i = 0; i != 8; ++i) {
+          flags[i] = inputStream.readUnsignedByte();
+        }
+        flagIndex = 0;
       }
-      flagIndex = 0;
+      final int nextStorageFlag = flags[flagIndex++];
+      if (nextStorageFlag != 0)
+        return nextStorageFlag;
     }
-    return flags[flagIndex++];
   }
 
   @Override
