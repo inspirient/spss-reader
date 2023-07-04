@@ -63,11 +63,6 @@ class CompressedCaseReader extends CaseReader {
     flagIndex = END_OF_BLOCK;
   }
 
-  public void restart() throws IOException {
-    super.restart();
-    flagIndex = END_OF_BLOCK;
-  }
-
   private int readNextStorageFlag() throws IOException {
     while (true) {
       if (flagIndex >= END_OF_BLOCK) {

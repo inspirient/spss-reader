@@ -37,10 +37,6 @@ class CaseReader {
     this.numCases = numCases;
 
     currentRowIndex = -1;
-
-    // mark the position of the start of case records so we can
-    // restart if requested
-    inputStream.getFile().mark(Integer.MAX_VALUE);
   }
 
   public final boolean readNext() throws IOException {
@@ -74,12 +70,6 @@ class CaseReader {
         currentRow.set(var.getIndex(), inputStream.stringFromBytes(value));
       }
     }
-  }
-
-  public void restart() throws IOException {
-    // move to beginning of data block
-    inputStream.getFile().reset();
-    currentRowIndex = -1;
   }
 
 }
