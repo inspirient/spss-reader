@@ -24,7 +24,7 @@ class CaseBuffer {
   CaseBuffer(int variableCount) {
     stringValues = new String[variableCount];
     doubleValues = new double[variableCount];
-    trailingSpaces = new int[variableCount];
+    trailingSpaces = new String[variableCount];
   }
 
   void set(int index, String value) {
