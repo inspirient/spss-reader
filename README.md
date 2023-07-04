@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient6 - 2023-07-04
+
+- Optimize code: Avoid creating objects in inner loop, avoid repeatedly appending single-character
+
 ### 1.4inspirient5 - 2023-06-14
 
 - Ensure a valid storage flag is available at all times (fixes StringIndexOutOfBoundsException)
