@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient10 - 2023-07-04
+
+- Bump to Java 8 to support lamda expressions
+
 ### 1.4inspirient9 - 2023-07-04
 
 - Optimization: Further avoid object creation overhead
