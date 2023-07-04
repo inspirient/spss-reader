@@ -15,16 +15,19 @@
 package com.bedatadriven.spss;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 class CaseBuffer {
   private String[] stringValues;
   private double[] doubleValues;
-  private String[] trailingSpaces;
+  private int[] trailingSpaces;
+  private Map<Integer, String> cachedTrailingSpacesStrings = new HashMap<>();
 
   CaseBuffer(int variableCount) {
     stringValues = new String[variableCount];
     doubleValues = new double[variableCount];
-    trailingSpaces = new String[variableCount];
+    trailingSpaces = new int[variableCount];
   }
 
   void set(int index, String value) {
@@ -36,9 +39,7 @@ class CaseBuffer {
   }
   
   void setTrailingSpaces(int index, int trailing) {
-    char[] chars = new char[trailing];
-    Arrays.fill(chars, ' ');
-    trailingSpaces[index] = new String(chars).intern();
+    trailingSpaces[index] = trailing;
   }
 
   void setMissing(int index) {
@@ -54,7 +55,13 @@ class CaseBuffer {
     String str = getStringValue(variableIndex);
     if(str != null) {
       sb.append(str);
-      sb.append(trailingSpaces[variableIndex]);
+      sb.append(cachedTrailingSpacesStrings.computeIfAbsent(trailingSpaces[variableIndex],
+        key -> {
+          char[] chars = new char[key];
+          Arrays.fill(chars, ' ');
+          return new String(chars);
+        }
+      ));
     }
   }
   
