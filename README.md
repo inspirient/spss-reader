@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient7 - 2023-07-04
+
+- Avoid Java 11 dependency
+
 ### 1.4inspirient6 - 2023-07-04
 
 - Optimize code: Avoid creating objects in inner loop, avoid repeatedly appending single-character
