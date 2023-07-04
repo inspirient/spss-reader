@@ -85,6 +85,7 @@ class CompressedCaseReader extends CaseReader {
   @Override
   protected void readRow() throws IOException {
 
+    StringBuilder buffer = new StringBuilder();
     int storageFlag = 0;
 
     for (SpssVariable var : variables) {
@@ -99,7 +100,7 @@ class CompressedCaseReader extends CaseReader {
           currentRow.setMissing(var.getIndex());
         }
       } else {
-        StringBuilder buffer = new StringBuilder();
+        buffer.setLength(0);
         int totalBytesRead = 0;
         do {
           // the "compressed" strings are stored

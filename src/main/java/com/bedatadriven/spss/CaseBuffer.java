@@ -18,7 +18,7 @@ package com.bedatadriven.spss;
 class CaseBuffer {
   private String[] stringValues;
   private double[] doubleValues;
-  private int[] trailingSpaces;
+  private String[] trailingSpaces;
 
   CaseBuffer(int variableCount) {
     stringValues = new String[variableCount];
@@ -35,7 +35,7 @@ class CaseBuffer {
   }
   
   void setTrailingSpaces(int index, int trailing) {
-    trailingSpaces[index] = trailing;
+    trailingSpaces[index] = " ".repeat(trailing).intern();
   }
 
   void setMissing(int index) {
@@ -50,10 +50,8 @@ class CaseBuffer {
   private void appendStringSegmentValue(int variableIndex, StringBuilder sb) {
     String str = getStringValue(variableIndex);
     if(str != null) {
-      sb.append( getStringValue(variableIndex));
-      for(int i=0; i<trailingSpaces[variableIndex]; i++) {
-        sb.append(' ');
-      }
+      sb.append(str);
+      sb.append(trailingSpaces[variableIndex]);
     }
   }
   
