@@ -14,6 +14,7 @@
 
 package com.bedatadriven.spss;
 
+import java.util.Arrays;
 
 class CaseBuffer {
   private String[] stringValues;
@@ -35,7 +36,9 @@ class CaseBuffer {
   }
   
   void setTrailingSpaces(int index, int trailing) {
-    trailingSpaces[index] = " ".repeat(trailing).intern();
+    char[] chars = new char[trailing];
+    Arrays.fill(chars, ' ');
+    trailingSpaces[index] = new String(chars).intern();
   }
 
   void setMissing(int index) {
