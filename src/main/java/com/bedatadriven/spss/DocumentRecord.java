@@ -22,7 +22,7 @@ class DocumentRecord {
 
   public DocumentRecord(SpssInputStream inputStream) throws IOException {
     int lineCount = inputStream.readInt();
-    inputStream.skipBytes(lineCount * 30);
+    inputStream.skipBytes(lineCount * 80);
   }
 
 }
