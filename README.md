@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient12 - 2023-11-06
+
+- Correctly skip SPSS Document Records
+
 ### 1.4inspirient11 - 2023-07-04
 
 - Add support for reading SPSS files larger than 2GB via BufferedInputStream
