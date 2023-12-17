@@ -15,7 +15,7 @@
 package com.bedatadriven.spss;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -30,7 +30,7 @@ class ValueLabelsRecord {
 
   static final int RECORD_TYPE = 3;
 
-  private Map<Double, byte[]> labels = new HashMap<>();
+  private Map<Double, byte[]> labels = new LinkedHashMap<>();
 
   ValueLabelsRecord(SpssInputStream inputStream) throws IOException {
     int count = inputStream.readInt();
@@ -68,5 +68,5 @@ class ValueLabelsRecord {
 
   public Map<Double, byte[]> getLabels() {
     return labels;
-	}
+  }
 }

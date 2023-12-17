@@ -313,7 +313,7 @@ public class SpssDataFileReader {
   }
 
   public Map<Double, String> getValueLabels(int variableIndex) {
-    Map<Double, String> labels = new HashMap<>();
+    Map<Double, String> labels = new LinkedHashMap<>();
 
     if (variables.get(variableIndex).valueLabels != null) {
       for (Map.Entry<Double, byte[]> entry : variables.get(variableIndex).valueLabels.entrySet()) {

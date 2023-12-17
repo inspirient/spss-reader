@@ -20,7 +20,7 @@ package com.bedatadriven.spss;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -270,7 +270,7 @@ public class SpssVariable {
   }
 
   public Map<Double, String> getValueLabels() {
-    Map<Double, String> map = new HashMap<>();
+    Map<Double, String> map = new LinkedHashMap<>();
     if (valueLabels != null) {
       for (Map.Entry<Double, byte[]> entry : valueLabels.entrySet()) {
         map.put(entry.getKey(), inputStream.stringFromBytes(entry.getValue()));
