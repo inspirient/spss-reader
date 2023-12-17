@@ -19,6 +19,10 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient13 - 2023-12-17
+
+- Ensure deterministic sorting order of value labels
+
 ### 1.4inspirient12 - 2023-11-06
 
 - Correctly skip SPSS Document Records
