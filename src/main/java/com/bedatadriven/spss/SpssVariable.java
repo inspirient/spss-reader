@@ -280,13 +280,13 @@ public class SpssVariable {
     return map;
   }
 
-    public Map<String, String> getStringValueLabels() {
-        Map<String, String> map = new LinkedHashMap<>();
-        if (stringValueLabels != null) {
-            for (Map.Entry<String, byte[]> entry : stringValueLabels.entrySet()) {
-                map.put(entry.getKey(), inputStream.stringFromBytes(entry.getValue()));
-            }
-        }
-        return map;
+  public Map<String, String> getStringValueLabels() {
+    Map<String, String> map = new LinkedHashMap<>();
+    if (stringValueLabels != null) {
+      for (Map.Entry<String, byte[]> entry : stringValueLabels.entrySet()) {
+        map.put(entry.getKey(), inputStream.stringFromBytes(entry.getValue()));
+      }
     }
+    return map;
+  }
 }
