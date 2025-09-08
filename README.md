@@ -19,6 +19,12 @@ Java library to read SPSS files.
     
 ## Changelog
 
+### 1.4inspirient14 - 2025-09-08
+
+- Merge current upstream master
+- Forward port fixes to ensure deterministic sorting order of value labels
+- Minor clean-ups
+
 ### 1.4inspirient13 - 2023-12-17
 
 - Ensure deterministic sorting order of value labels
