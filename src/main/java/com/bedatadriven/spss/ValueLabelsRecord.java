@@ -15,6 +15,7 @@
 package com.bedatadriven.spss;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -30,12 +31,26 @@ class ValueLabelsRecord {
 
   static final int RECORD_TYPE = 3;
 
-  private Map<Double, byte[]> labels = new LinkedHashMap<>();
+  private final Map<Double, byte[]> labels = new LinkedHashMap<>();
+
+  private final Map<String, byte[]> stringLabels = new LinkedHashMap<>();
 
   ValueLabelsRecord(SpssInputStream inputStream) throws IOException {
     int count = inputStream.readInt();
     for (int i = 0; i < count; i++) {
-      labels.put(inputStream.readDouble(), readValueLabel(inputStream));
+
+      byte[] key = inputStream.readBytes(8);
+      byte[] valueLabel = readValueLabel(inputStream);
+
+      double d = ByteBuffer.wrap(key).getDouble();
+      if (inputStream.isNeedToFlipBytes()) {
+        long l = Double.doubleToRawLongBits(d);
+        l = Long.reverseBytes(l);
+        d = Double.longBitsToDouble(l);
+      }
+
+      labels.put(d, valueLabel);
+      stringLabels.put(new String(key).trim(), valueLabel);
     }
   }
 
@@ -68,5 +83,9 @@ class ValueLabelsRecord {
 
   public Map<Double, byte[]> getLabels() {
     return labels;
+	}
+
+  public Map<String, byte[]> getStringLabels() {
+    return stringLabels;
   }
 }
